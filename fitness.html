@@ -1,0 +1,353 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { Link } from "wouter";
+
+export default function Dashboard() {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      {/* Dashboard Header */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-heading font-bold text-neutral-dark mb-6">Your Dashboard</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Progress Card */}
+          <Card>
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-heading font-semibold text-lg">Weekly Progress</h3>
+                <i className="bx bx-line-chart text-primary text-2xl"></i>
+              </div>
+              <div className="space-y-4">
+                <Progress 
+                  value={60} 
+                  variant="primary" 
+                  label="Workouts" 
+                  sublabel="3/5 completed" 
+                />
+                <Progress 
+                  value={75} 
+                  variant="primary" 
+                  label="Nutrition Plan" 
+                  sublabel="75% adherence" 
+                />
+                <Progress 
+                  value={80} 
+                  variant="primary" 
+                  label="Sleep Quality" 
+                  sublabel="Good" 
+                />
+              </div>
+            </CardContent>
+        </Card>
+
+        {/* Goals Card */}
+        <Card>
+          <CardContent className="p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-heading font-semibold text-lg">Your Goals</h3>
+              <i className="bx bx-target-lock text-accent text-2xl"></i>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                  <i className="bx bx-run text-primary text-xl"></i>
+                </div>
+                <div>
+                  <p className="font-medium">Lose 5 kg</p>
+                  <p className="text-gray-500 text-sm">2 kg lost so far</p>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                  <i className="bx bx-dumbbell text-secondary text-xl"></i>
+                </div>
+                <div>
+                  <p className="font-medium">Build muscle tone</p>
+                  <p className="text-gray-500 text-sm">In progress</p>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <div className="h-10 w-10 rounded-full bg-amber-100 flex items-center justify-center mr-4">
+                  <i className="bx bx-heart text-accent text-xl"></i>
+                </div>
+                <div>
+                  <p className="font-medium">Improve endurance</p>
+                  <p className="text-gray-500 text-sm">17% improvement</p>
+                </div>
+              </div>
+            </div>
+        </CardContent>
+    </Card>
+
+    {/* Today's Plan Card */}
+    <Card>
+      <CardContent className="p-6">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="font-heading font-semibold text-lg">Today's Plan</h3>
+          <i className="bx bx-calendar-check text-secondary text-2xl"></i>
+        </div>
+        <div className="space-y-4">
+          <div className="flex items-center">
+            <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+              <i className="bx bx-time text-primary text-xl"></i>
+            </div>
+            <div>
+              <p className="font-medium">30 min HIIT Workout</p>
+              <p className="text-gray-500 text-sm">07:00 AM</p>
+            </div>
+          </div>
+          <div className="flex items-center">
+            <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+              <i className="bx bx-bowl-hot text-secondary text-xl"></i>
+            </div>
+            <div>
+              <p className="font-medium">Protein-rich breakfast</p>
+              <p className="text-gray-500 text-sm">08:30 AM</p>
+            </div>
+          </div>
+          <div className="flex items-center">
+            <div className="h-10 w-10 rounded-full bg-amber-100 flex items-center justify-center mr-4">
+              <i className="bx bx-water text-accent text-xl"></i>
+            </div>
+            <div>
+              <p className="font-medium">Hydration reminder</p>
+              <p className="text-gray-500 text-sm">Throughout the day</p>
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+</div>
+</div>
+
+{/* Feature Showcase */}
+<div className="space-y-8">
+<h2 className="text-2xl font-heading font-bold text-neutral-dark">Key Features</h2>
+
+{/* Transformation Feature */}
+<Card className="overflow-hidden">
+  <div className="grid md:grid-cols-2">
+    <div className="p-6 md:p-8">
+      <div className="flex items-center mb-4">
+        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+          <i className="bx bx-edit-alt text-primary text-xl"></i>
+        </div>
+        <h3 className="font-heading font-bold text-xl">Visual Transformation</h3>
+      </div>
+      <p className="text-gray-600 mb-6">
+        See your potential fitness journey before you start. Our AI visualizes your possible transformation based on your goals, body type, and consistency.
+      </p>
+      <div className="space-y-4">
+        <div className="flex items-start">
+          <i className="bx bx-check text-secondary text-xl mr-2 mt-0.5"></i>
+          <p className="text-gray-700">Realistic visualization of potential progress</p>
+        </div>
+        <div className="flex items-start">
+          <i className="bx bx-check text-secondary text-xl mr-2 mt-0.5"></i>
+          <p className="text-gray-700">Multiple timeline options (3, 6, 12 months)</p>
+        </div>
+        <div className="flex items-start">
+          <i className="bx bx-check text-secondary text-xl mr-2 mt-0.5"></i>
+          <p className="text-gray-700">Stay motivated with visual goals</p>
+        </div>
+      </div>
+      <Link href="/transformation">
+        <Button className="mt-6 bg-primary hover:bg-blue-600">
+          <span>Try it now</span>
+          <i className="bx bx-right-arrow-alt ml-2"></i>
+        </Button>
+      </Link>
+    </div>
+    <div className="bg-gray-50 p-6 flex items-center justify-center">
+        <div className="transformation-slider relative h-[300px] w-full rounded-xl overflow-hidden">
+          <div className="slider-before absolute top-0 left-0 w-1/2 h-full bg-cover bg-center" 
+               style={{backgroundImage: "url('https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80')"}}>
+          </div>
+          <div className="slider-after absolute top-0 left-0 w-full h-full bg-cover bg-center" 
+               style={{backgroundImage: "url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80')"}}>
+          </div>
+          <div className="slider-handle absolute top-0 left-1/2 w-1 h-full bg-white cursor-ew-resize flex items-center justify-center">
+            <div className="w-10 h-10 bg-white rounded-full"></div>
+          </div>
+          <div className="absolute bottom-4 left-4 bg-black bg-opacity-60 text-white text-sm py-1 px-3 rounded-full">
+            Before
+          </div>
+          <div className="absolute bottom-4 right-4 bg-black bg-opacity-60 text-white text-sm py-1 px-3 rounded-full">
+            Potential After
+          </div>
+        </div>
+      </div>
+    </div>
+  </Card>
+
+  {/* Diet Feature */}
+  <Card className="overflow-hidden">
+    <div className="grid md:grid-cols-2">
+      <div className="order-2 md:order-1 bg-gray-50 p-6 flex items-center justify-center">
+        <Card className="max-w-md w-full">
+          <CardContent className="p-5">
+            <h4 className="font-heading font-semibold text-lg mb-4">Your Personalized Meal Plan</h4>
+            
+            <div className="border-b pb-3 mb-3">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-medium">Breakfast</span>
+                <span className="text-sm text-gray-500">08:00 AM</span>
+            </div>
+            <div className="flex items-center">
+              <img src="https://images.unsplash.com/photo-1494597564530-871f2b93ac55?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Oatmeal with fruits" className="w-16 h-16 rounded-md object-cover mr-3" />
+              <div>
+                <p className="font-medium">Masala Oatmeal</p>
+                <p className="text-sm text-gray-600">With fresh fruits and honey</p>
+                <div className="flex mt-1">
+                  <span className="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded mr-1">Protein: 12g</span>
+                  <span className="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded">Fiber: 8g</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-b pb-3 mb-3">
+            <div className="flex justify-between items-center mb-2">
+              <span className="font-medium">Lunch</span>
+              <span className="text-sm text-gray-500">01:00 PM</span>
+            </div>
+            <div className="flex items-center">
+              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Vegetable curry with brown rice" className="w-16 h-16 rounded-md object-cover mr-3" />
+              <div>
+                <p className="font-medium">Vegetable Curry</p>
+                <p className="text-sm text-gray-600">With brown rice and lentils</p>
+                <div className="flex mt-1">
+                  <span className="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded mr-1">Protein: 18g</span>
+                  <span className="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded">Fiber: 12g</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="flex justify-between items-center mb-2">
+                <span className="font-medium">Dinner</span>
+                <span className="text-sm text-gray-500">07:00 PM</span>
+              </div>
+              <div className="flex items-center">
+                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Grilled fish with vegetables" className="w-16 h-16 rounded-md object-cover mr-3" />
+                <div>
+                  <p className="font-medium">Grilled Fish</p>
+                  <p className="text-sm text-gray-600">With steamed vegetables</p>
+                  <div className="flex mt-1">
+                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded mr-1">Protein: 24g</span>
+                    <span className="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded">Fiber: 6g</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+      <div className="p-6 md:p-8 order-1 md:order-2">
+        <div className="flex items-center mb-4">
+          <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+            <i className="bx bx-food-menu text-secondary text-xl"></i>
+          </div>
+          <h3 className="font-heading font-bold text-xl">Personalized Diet Plan</h3>
+        </div>
+        <p className="text-gray-600 mb-6">
+          Receive customized meal plans that respect your cultural food preferences, local ingredient availability, and nutritional needs.
+        </p>
+        <div className="space-y-4">
+          <div className="flex items-start">
+            <i className="bx bx-check text-secondary text-xl mr-2 mt-0.5"></i>
+            <p className="text-gray-700">Culturally appropriate recipes you'll actually enjoy</p>
+          </div>
+          <div className="flex items-start">
+            <i className="bx bx-check text-secondary text-xl mr-2 mt-0.5"></i>
+            <p className="text-gray-700">Adapts to seasonal and local ingredient availability</p>
+          </div>
+          <div className="flex items-start">
+            <i className="bx bx-check text-secondary text-xl mr-2 mt-0.5"></i>
+            <p className="text-gray-700">Nutritionally balanced for your fitness goals</p>
+          </div>
+          <div className="flex items-start">
+            <i className="bx bx-check text-secondary text-xl mr-2 mt-0.5"></i>
+            <p className="text-gray-700">Accommodates dietary restrictions and allergies</p>
+          </div>
+        </div>
+        <Link href="/diet-plan">
+          <Button className="mt-6 bg-secondary hover:bg-green-600">
+            <span>Generate your meal plan</span>
+            <i className="bx bx-right-arrow-alt ml-2"></i>
+          </Button>
+        </Link>
+      </div>
+    </div>
+  </Card>
+
+  {/* Posture Feature */}
+  <Card className="overflow-hidden">
+    <div className="grid md:grid-cols-2">
+      <div className="p-6 md:p-8">
+        <div className="flex items-center mb-4">
+          <div className="h-10 w-10 rounded-full bg-amber-100 flex items-center justify-center mr-3">
+            <i className="bx bx-video text-accent text-xl"></i>
+          </div>
+          <h3 className="font-heading font-bold text-xl">Posture Monitoring</h3>
+        </div>
+        <p className="text-gray-600 mb-6">
+          Exercise safely and effectively with real-time posture analysis. Our computer vision technology ensures you perform exercises correctly to prevent injuries.
+        </p>
+        <div className="space-y-4">
+          <div className="flex items-start">
+            <i className="bx bx-check text-secondary text-xl mr-2 mt-0.5"></i>
+            <p className="text-gray-700">Real-time feedback on form and technique</p>
+          </div>
+          <div className="flex items-start">
+            <i className="bx bx-check text-secondary text-xl mr-2 mt-0.5"></i>
+            <p className="text-gray-700">Personalized guidance for exercise correction</p>
+          </div>
+          <div className="flex items-start">
+            <i className="bx bx-check text-secondary text-xl mr-2 mt-0.5"></i>
+            <p className="text-gray-700">Support for multiple exercise types</p>
+          </div>
+          <div className="flex items-start">
+            <i className="bx bx-check text-secondary text-xl mr-2 mt-0.5"></i>
+            <p className="text-gray-700">Prevent injuries with proper form</p>
+        </div>
+      </div>
+      <Link href="/posture">
+        <Button className="mt-6 bg-accent hover:bg-amber-600">
+          <span>Monitor your posture</span>
+          <i className="bx bx-right-arrow-alt ml-2"></i>
+        </Button>
+      </Link>
+    </div>
+    <div className="bg-gray-50 p-6 flex items-center justify-center">
+      <div className="posture-monitor relative h-[300px] w-full rounded-xl overflow-hidden bg-gray-900 flex items-center justify-center">
+        <div className="posture-display relative">
+          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80" alt="Person exercising" className="rounded-lg" />
+          
+          <div className="posture-indicators absolute top-0 left-0 w-full h-full">
+            {/* Simulated posture analysis overlay */}
+            <div className="absolute top-[30%] left-[45%] w-3 h-3 bg-green-500 rounded-full animate-ping opacity-75"></div>
+            <div className="absolute top-[30%] left-[45%] w-2 h-2 bg-green-500 rounded-full"></div>
+            
+            <div className="absolute top-[60%] left-[48%] w-3 h-3 bg-amber-500 rounded-full animate-ping opacity-75"></div>
+            <div className="absolute top-[60%] left-[48%] w-2 h-2 bg-amber-500 rounded-full"></div>
+            
+            <div className="absolute top-[80%] left-[42%] w-3 h-3 bg-green-500 rounded-full animate-ping opacity-75"></div>
+            <div className="absolute top-[80%] left-[42%] w-2 h-2 bg-green-500 rounded-full"></div>
+          </div>
+          
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+            <div className="bg-black bg-opacity-50 text-white text-sm py-1 px-3 rounded-full">
+              <i className="bx bx-check text-green-400 mr-1"></i> Good form overall, watch your knee alignment
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Card>
+</div>
+   </div>
+  );
+}
